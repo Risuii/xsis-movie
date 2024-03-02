@@ -1,0 +1,538 @@
+{
+	"info": {
+		"_postman_id": "dddbe72a-1e83-4317-8d92-d8c6dffcc13d",
+		"name": "Movies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17198851"
+	},
+	"item": [
+		{
+			"name": "Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/Movies/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Movies",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get-Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/Movies/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Movies",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 05:22:00 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "426"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Pengabdi Setan 2 Comunion\",\n        \"description\": \"Adalah sebuah film horor Indonesia tahun 2022 yang disutradarai dan ditulis oleh Joko Anwar sebagai sekuel dari film tahun 2017, Pengabdi Setan.\",\n        \"rating\": 7,\n        \"image\": \"\",\n        \"created_at\": \"2024-03-02T11:03:48.457026+07:00\",\n        \"updated_at\": \"2024-03-02T11:03:48.457026+07:00\"\n    },\n    \"error\": null,\n    \"success\": true,\n    \"metadata\": {\n        \"request_id\": \"0a14ea37-0e2b-4d2e-944f-edaac5e2b32c\"\n    }\n}"
+				},
+				{
+					"name": "Get-Error-Id-Not-Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/Movies/9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Movies",
+								"9"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 05:23:08 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "254"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"error\": {\n        \"code\": \"err_movie_id_not_found\",\n        \"message_title\": \"err_movie_id_not_found_title\",\n        \"message\": \"err_movie_id_not_found_message\",\n        \"message_severity\": \"error\"\n    },\n    \"success\": false,\n    \"metadata\": {\n        \"request_id\": \"191a368f-6725-4b38-9346-0508e88e238c\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get-List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/Movies",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Movies"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get-List-Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/Movies",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Movies"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 07:41:26 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1256"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"Data\": [\n            {\n                \"id\": 1,\n                \"title\": \"Pengabdi Setan 2 Comunion\",\n                \"description\": \"Adalah sebuah film horor Indonesia tahun 2022 yang disutradarai dan ditulis oleh Joko Anwar sebagai sekuel dari film tahun 2017, Pengabdi Setan.\",\n                \"rating\": 7,\n                \"image\": \"\",\n                \"created_at\": \"2024-03-02 11:03:48\",\n                \"updated_at\": \"2024-03-02 11:03:48\"\n            },\n            {\n                \"id\": 2,\n                \"title\": \"Pengabdi Setan\",\n                \"description\": \"Adalah sebuah film horor Indonesia tahun 2017 yang disutradarai dan ditulis oleh Joko Anwar\",\n                \"rating\": 8,\n                \"image\": \"\",\n                \"created_at\": \"2024-03-02 11:03:48\",\n                \"updated_at\": \"2024-03-02 11:03:48\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"Avengers\",\n                \"description\": \"Sebuah film super hero dari marvel tahun 2012\",\n                \"rating\": 9.5,\n                \"image\": \"\",\n                \"created_at\": \"2024-03-02 11:03:48\",\n                \"updated_at\": \"2024-03-02 11:03:48\"\n            },\n            {\n                \"id\": 4,\n                \"title\": \"The Greatest Showman\",\n                \"description\": \"Film drama musical mengenai sirkus\",\n                \"rating\": 10,\n                \"image\": \"\",\n                \"created_at\": \"2024-03-02 11:03:48\",\n                \"updated_at\": \"2024-03-02 11:03:48\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"Spiderman Home Coming\",\n                \"description\": \"Film super hero dari marvel tahun 2022\",\n                \"rating\": 10,\n                \"image\": \"\",\n                \"created_at\": \"2024-03-02 11:03:48\",\n                \"updated_at\": \"2024-03-02 11:03:48\"\n            }\n        ],\n        \"Pagination\": {\n            \"page\": 1,\n            \"total_page\": 1,\n            \"total_data\": 5\n        }\n    },\n    \"error\": null,\n    \"success\": true,\n    \"metadata\": {\n        \"request_id\": \"4fca73de-8842-4d87-95e0-c5af7b71d1ea\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"test-title-1\",\n    \"description\": \"test-description-1\",\n    \"rating\": 1,\n    \"image\": \"test-image-1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/Movies",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Movies"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create-Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"test-title-1\",\n    \"description\": \"test-description-1\",\n    \"rating\": 1,\n    \"image\": \"test-image-1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/Movies",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Movies"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 09:25:16 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "297"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"ID\": 7,\n        \"Title\": \"test-title-1\",\n        \"Description\": \"test-description-1\",\n        \"Rating\": 1,\n        \"Image\": \"test-image-1\",\n        \"CreatedAt\": \"2024-03-02T16:25:16.354374+07:00\",\n        \"UpdatedAt\": \"2024-03-02T16:25:16.354374+07:00\"\n    },\n    \"error\": null,\n    \"success\": true,\n    \"metadata\": {\n        \"request_id\": \"74767ad7-72c4-4fa7-8cdb-8b20a613c60d\"\n    }\n}"
+				},
+				{
+					"name": "Create-Error-Bad-Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"\",\n    \"description\": \"test-description-1\",\n    \"rating\": 1,\n    \"image\": \"test-image-1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/Movies",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Movies"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 08:46:54 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "226"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"error\": {\n        \"code\": \"err_bad_request\",\n        \"message_title\": \"Bad Request\",\n        \"message\": \"Invalid request parameters\",\n        \"message_severity\": \"error\"\n    },\n    \"success\": false,\n    \"metadata\": {\n        \"request_id\": \"0646efad-c319-47af-95e5-66b3f72a29e5\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"test-title-2\",\n    \"description\": \"test-description-2\",\n    \"rating\": 2,\n    \"image\": \"test-image-2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/Movies/6",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Movies",
+						"6"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update-Success",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"test-title-1\",\n    \"description\": \"test-description-1\",\n    \"rating\": 1,\n    \"image\": \"test-image-1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/Movies/6",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Movies",
+								"6"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 08:52:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "273"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 6,\n        \"title\": \"test-title-1\",\n        \"description\": \"test-description-1\",\n        \"rating\": 1,\n        \"image\": \"test-image-1\",\n        \"created_at\": \"2024-03-02 15:11:34\",\n        \"updated_at\": \"2024-03-02 15:52:44\"\n    },\n    \"error\": null,\n    \"success\": true,\n    \"metadata\": {\n        \"request_id\": \"60487047-4fb7-462a-97b2-0b7390267760\"\n    }\n}"
+				},
+				{
+					"name": "Update-Error-Bad-Request",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"\",\n    \"description\": \"test-description-2\",\n    \"rating\": 2,\n    \"image\": \"test-image-2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/Movies/6",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Movies",
+								"6"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 08:49:00 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "226"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"error\": {\n        \"code\": \"err_bad_request\",\n        \"message_title\": \"Bad Request\",\n        \"message\": \"Invalid request parameters\",\n        \"message_severity\": \"error\"\n    },\n    \"success\": false,\n    \"metadata\": {\n        \"request_id\": \"e7f29d8d-1602-40e4-b0f2-546e46bc5f76\"\n    }\n}"
+				},
+				{
+					"name": "Update-Error-Id-Not-Found",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"test-title-2\",\n    \"description\": \"test-description-2\",\n    \"rating\": 2,\n    \"image\": \"test-image-2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/Movies/9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Movies",
+								"9"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 08:49:21 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "254"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"error\": {\n        \"code\": \"err_movie_id_not_found\",\n        \"message_title\": \"err_movie_id_not_found_title\",\n        \"message\": \"err_movie_id_not_found_message\",\n        \"message_severity\": \"error\"\n    },\n    \"success\": false,\n    \"metadata\": {\n        \"request_id\": \"425bfc28-bc77-4adc-8547-886e990f0028\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/Movies/8",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Movies",
+						"8"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete-Success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/Movies/8",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Movies",
+								"8"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 09:47:28 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"success delete movie\",\n    \"error\": null,\n    \"success\": true,\n    \"metadata\": {\n        \"request_id\": \"f814ced9-5756-462a-96a8-0781f168e1ce\"\n    }\n}"
+				},
+				{
+					"name": "Delete-Error-Id-Not-Found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/Movies/9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Movies",
+								"9"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 09:47:59 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "254"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"error\": {\n        \"code\": \"err_movie_id_not_found\",\n        \"message_title\": \"err_movie_id_not_found_title\",\n        \"message\": \"err_movie_id_not_found_message\",\n        \"message_severity\": \"error\"\n    },\n    \"success\": false,\n    \"metadata\": {\n        \"request_id\": \"f8133f84-313e-4b07-8c91-075660a2ca3c\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
